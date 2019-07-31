@@ -1,5 +1,6 @@
 {
     "private": true,
+    "name": "@helick/mail",
     "release": {
         "verifyConditions": [
             "@semantic-release/github"
