@@ -47,7 +47,7 @@ function password(): string
  *
  * @return string
  */
-function fromName(): string
+function from_name(): string
 {
     return defined('MAIL_FROM_NAME')
         ? MAIL_FROM_NAME
@@ -59,7 +59,7 @@ function fromName(): string
  *
  * @return string
  */
-function fromAddress(): string
+function from_address(): string
 {
     return defined('MAIL_FROM_ADDRESS')
         ? MAIL_FROM_ADDRESS
