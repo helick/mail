@@ -33,10 +33,10 @@ final class Plugin implements Bootable
         $mailer->isSMTP();
         $mailer->SMTPAuth = true;
 
-        $mailer->Host     = defined('MAIL_HOST') ? MAIL_HOST : '';
-        $mailer->Port     = defined('MAIL_PORT') ? MAIL_PORT : 587;
-        $mailer->Username = defined('MAIL_USER') ? MAIL_USER : '';
-        $mailer->Password = defined('MAIL_PASSWORD') ? MAIL_PASSWORD : '';
+        $mailer->Host     = host();
+        $mailer->Port     = port();
+        $mailer->Username = user();
+        $mailer->Password = password();
     }
 
     /**
@@ -46,9 +46,7 @@ final class Plugin implements Bootable
      */
     public function fromName(): string
     {
-        return defined('MAIL_FROM_NAME')
-            ? MAIL_FROM_NAME
-            : get_bloginfo('blogname', 'raw');
+        return from_name();
     }
 
     /**
@@ -58,8 +56,6 @@ final class Plugin implements Bootable
      */
     public function fromAddress(): string
     {
-        return defined('MAIL_FROM_ADDRESS')
-            ? MAIL_FROM_ADDRESS
-            : get_bloginfo('admin_email', 'raw');
+        return from_address();
     }
 }
