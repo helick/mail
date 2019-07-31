@@ -16,8 +16,6 @@ script:
 deploy:
     provider: script
     skip_cleanup: true
-    script:
-        - nvm install lts/*
-        - npx semantic-release
+    script: npx semantic-release
     on:
         branch: master
